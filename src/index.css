@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000;
+  background-color: #fbfbfe;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bder{
+  border: 1px solid #242424;
+}
+.bder-users{
+  border: 1px solid #e5e5e5;
+}
+.box-shadow-1{
+  box-shadow: 2px 2px 15px -10px rgba(0, 0, 0, 0.5);
+}

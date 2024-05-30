@@ -246,7 +246,7 @@ function Users() {
                   <span className="select-none bder-users-1 py-3 hidden sm:flex items-center justify-center">
                     {user.numberOfCards}
                   </span>
-                  <div className="text-[#4a4b4a] text-[15px] flex items-center justify-center gap-2  my_p_user xl:text-[17px] 2xl:text-[19px]">
+                  <div className="text-[#4a4b4a] text-[15px] flex items-center justify-center gap-2  my_p_user xl:text-[17px] 2xl:text-[20px] bder-users-1">
                     <NavLink to={`/admin/users/${user.id}`}>
                       <FaEye className="cursor-pointer hover:text-[#333]" />
                     </NavLink>
@@ -259,7 +259,6 @@ function Users() {
                 </div>
               );
             })}
-            <div className="mb-10"></div>
           </div>
         </div>
       </div>

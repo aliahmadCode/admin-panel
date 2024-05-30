@@ -22,6 +22,15 @@
 .bder-users{
   border: 1px solid #e5e5e5;
 }
+.bder-users-1{
+  border: 2px solid #f8f9f9;
+}
 .box-shadow-1{
   box-shadow: 2px 2px 15px -10px rgba(0, 0, 0, 0.5);
+}
+
+.my-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }

@@ -29,9 +29,10 @@ function Navbar() {
     <>
       <div className="relative flex lg:flex-col h-[100%] flex-row justify-between items-center select-none px-4 lg:px-0">
         <div className="w-[100%] flex flex-row items-center lg:flex-col justify-between ">
-          <div className="py-4">
-            <h3 className="text-white text-[30px] cursor-pointer">VBC</h3>
+          <div className="py-4 lg:py-10 xl:py-12">
+            <h3 className="text-white text-[30px] xl:text-[35px] 2xl:text-[43px] cursor-pointer">VBC</h3>
           </div>
+          <hr className="hidden lg:block border-[#324567] w-[80%] h-[3px] mb-12"/>
           <div className="hidden lg:flex lg:flex-col flex-row gap-3 justify-center items-center">
             {dahboard.map((item) => {
               const Icons = item.icon;
@@ -39,8 +40,8 @@ function Navbar() {
                 <NavLink key={item.id}
                   className={({ isActive }) =>
                     isActive
-                      ? `text-black bg-[#fefffe] font-[600]  px-5 w-[100%]  py-2 rounded-md`
-                      : `text-white  text-[400] px-5 w-[100%] py-2  rounded-md`
+                      ? `text-black bg-[#fefffe] font-[600] xl:px-14 2xl:px-16 xl:text-[18px] 2xl:text-[22px]  px-12 w-[100%]  py-2 rounded-md`
+                      : `text-white  text-[400] px-12 xl:px-14 2xl:px-16 xl:text-[18px] 2xl:text-[22px] w-[100%] py-2  rounded-md`
                   }
                   to={`${item.route}`}
                 >
@@ -74,7 +75,7 @@ function Navbar() {
           </div>
         </div>
         <NavLink to="/login">
-          <div className="hidden md:flex text-white items-center justify-center lg:py-2 px-3 lg:px-5 py-[6px] cursor-pointer rounded-md lg:my-2 lg:mb-5 hover:bg-[#fefffe] hover:text-black hover:font-[600] gap-1 ">
+          <div className="hidden md:flex text-white items-center justify-center xl:px-14 2xl:px-16 xl:text-[18px] 2xl:text-[22px]  lg:py-2 px-12  py-[6px] cursor-pointer rounded-md lg:my-2 lg:mb-5 hover:bg-[#fefffe] hover:text-black hover:font-[600] gap-1 ">
             <IoMdLogOut />
             <div>SignOut</div>
           </div>
@@ -119,7 +120,7 @@ function Navbar() {
                 })}
               </div>
               <NavLink to="/login">
-                <div className="md:hidden flex mt-5 text-white items-center justify-center lg:py-2 px-3 lg:px-5 py-[6px] cursor-pointer rounded-md lg:my-2 lg:mb-5 hover:bg-[#fefffe] hover:text-black hover:font-[600] gap-1 ">
+                <div className="md:hidden flex mt-5  text-white items-center justify-center lg:py-2 px-3 lg:px-5 py-[6px] cursor-pointer rounded-md lg:my-2 lg:mb-5 hover:bg-[#fefffe] hover:text-black hover:font-[600] gap-1 ">
                   <IoMdLogOut />
                   <div>SignOut</div>
                 </div>

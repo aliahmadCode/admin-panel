@@ -10,12 +10,12 @@ function SignIn() {
   const [isverified, setIsVerified] = useState(true);
   return (
     <>
-      <div className="w-screen h-screen flex gap-4 flex-col   lg:gap-0 lg:flex lg:flex-row">
+      <div className="w-screen h-screen flex gap-4 flex-col lg:gap-0 lg:flex lg:flex-row">
         <div className="w-[100%] h-[12%] lg:w-[32%] lg:h-[100%] bg-[#1d2f57] lg:rounded-r-2xl flex px-7 lg:px-0 justify-start lg:justify-center items-center">
           <h3 className="text-white text-[35px] cursor-pointer select-none">VBC</h3>
         </div>
         <div className="flex justify-center items-center w-full h-full">
-          <div className="w-[380px] h-[380px] sm:w-[430px] mt-2 rounded-xl sm:h-[400px] bg-[#f8f9f9] border-[1px] border-[#d4d4d4] border-solid">
+          <div className="w-[95%] h-[380px] sm:w-[430px] mt-2 rounded-xl sm:h-[400px] bg-[#f8f9f9] border-[1px] border-[#d4d4d4] border-solid">
             <div className="flex flex-col w-[100%] select-none h-[100%] gap-5 justify-center items-center font-sans">
               <div className="flex flex-col justify-center items-center gap-2">
                 <h3 className="text-[25px] font-[600]">Sign In</h3>

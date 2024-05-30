@@ -8,6 +8,7 @@ import { CiSearch } from "react-icons/ci";
 import { ImCheckboxChecked } from "react-icons/im";
 import { ImCheckboxUnchecked } from "react-icons/im";
 
+
 const data = [
   {
     id: 1,
@@ -16,6 +17,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 4,
@@ -40,6 +44,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 5,
@@ -48,6 +53,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 6,
@@ -56,6 +62,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 7,
@@ -64,6 +71,7 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
   {
     id: 8,
@@ -72,36 +80,57 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
+    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
   },
 ];
+
+
+import { FaEye } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { FaPenAlt } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 function Users() {
   const [selectedCount, setRowSelected] = useState(0);
   const [isAllChecked, setIsAllChecked] = useState(false);
   const [users, setUsers] = useState(data);
+  useEffect(() => {
+    if (isAllChecked) {
+      setRowSelected(users.length);
+    } else {
+      setRowSelected(0);
+    }
+    console.log(users)
+  }, [users]);
 
   function handleIsAllChecked() {
     if (isAllChecked) {
-        setIsAllChecked(prev => !prev)
-        setUsers(data)
-    }else{
-        setIsAllChecked(prev => !prev)
-        const arr = users.map(item =>{
-            return {...item, checked: true}
-        })
-        setUsers(arr)
+      setIsAllChecked((prev) => !prev);
+      setUsers(data);
+    } else {
+      setIsAllChecked((prev) => !prev);
+      const arr = users.map((item) => {
+        return { ...item, checked: true };
+      });
+      setUsers(arr);
     }
   }
+
   function handleUserChecked(id) {
-    const arr = users.map(user => {
-        if (id === user.id && user.checked === false){
-            return {...user, checked: true}
-        }else{
-            return {...user, checked: false}
-        }
-    })
+    const arr = users.map((user) => {
+      if (id === user.id && user.checked === false) {
+        return { ...user, checked: true };
+      } else {
+        return { ...user, checked: false };
+      }
+    });
+    setUsers(arr);
+  }
+  function handleDelete(id){
+    const arr = users.filter(item => item.id !== id)
     setUsers(arr)
   }
+
   return (
     <>
       <div className="bg-[#fefffe] w-[100%] h-full  flex flex-col">
@@ -143,7 +172,7 @@ function Users() {
               />
             </div>
           </div>
-          <div className=" w-[90vw] lg:w-[72vw] h-[100%] max-h-[70vh]  overflow-auto rounded-md mb-5 mt-5 sm:mt-3 bg-[#f8f9f9]">
+          <div className=" w-[90vw] lg:w-[72vw] h-[100%] max-h-[70vh]  overflow-auto rounded-md  mt-5 sm:mt-3 bg-[#f8f9f9]">
             <div className="my-grid">
               <div className="flex justify-center items-center select-none ">
                 {isAllChecked ? (
@@ -153,44 +182,67 @@ function Users() {
                   />
                 ) : (
                   <ImCheckboxUnchecked
-                    className=""
+                    className="mx-2"
                     onClick={() => handleIsAllChecked()}
                   />
                 )}
               </div>
-              <span className="select-none ">Users</span>
-              <span className="select-none ">Phone</span>
-              <span className="select-none ">Email</span>
-              <span className="select-none ">No of Cards</span>
-              <span className="select-none r">Actions</span>
+              <span className="select-none py-2 my_p_user  flex items-center justify-center ">
+                Users
+              </span>
+              <span className="select-none hidden sm:flex items-center justify-center ">
+                Phone
+              </span>
+              <span className="select-none  my_p_em sm:ml-0 flex items-center justify-center ">
+                Email
+              </span>
+              <span className="select-none hidden sm:flex items-center justify-center ">
+                No of Cards
+              </span>
+              <span className="select-none  my_p_act sm:ml-0 flex items-center justify-center ">
+                Actions
+              </span>
             </div>
             {users.map((user) => {
               return (
-                <div className="my-grid " key={user.id}>
-                  <div className="flex justify-center items-center select-none ">
+                <div className="my-grid" key={user.id}>
+                  <div className="flex bder-users-1 justify-center items-center select-none py-3">
                     {user.checked ? (
                       <ImCheckboxChecked
-                        className=""
+                        className="my_p_icon"
                         onClick={() => handleUserChecked(user.id)}
                       />
                     ) : (
                       <ImCheckboxUnchecked
-                        className=""
+                        className="my_p_icon"
                         onClick={() => handleUserChecked(user.id)}
                       />
                     )}
                   </div>
-                  <div className="flex">
-                    <img src="/user.svg" alt="user" />
-                    <span className="select-none ">{user.username}</span>
+                  <div className="flex bder-users-1 py-3 items-center gap-2 my_p_user">
+                    <img src="/user.svg" alt="user" className="w-8 h-8 " />
+                    <span className="select-none sm:leading-none leading-[17px] ">
+                      {user.username}
+                    </span>
                   </div>
-                  <span className="select-none ">{user.phone}</span>
-                  <span className="select-none ">{user.email}</span>
-                  <span className="select-none ">{user.numberOfCards}</span>
-                  <span className="select-none ">{user.username}</span>
+                  <span className="select-none bder-users-1 py-3 hidden sm:flex items-center justify-center">
+                    {user.phone}
+                  </span>
+                  <span className="select-none bder-users-1 py-3  my_p_user sm:ml-0 flex items-center justify-center">
+                    {user.email}
+                  </span>
+                  <span className="select-none bder-users-1 py-3 hidden sm:flex items-center justify-center">
+                    {user.numberOfCards}
+                  </span>
+                  <div className="text-[#4a4b4a] text-[15px] flex items-center justify-center gap-2  my_p_user">
+                    <NavLink to={`/admin/users/${user.id}`}><FaEye className="cursor-pointer hover:text-[#333]" /></NavLink>
+                    <MdDelete onClick={() => handleDelete(user.id)} className="cursor-pointer hover:text-[#333]" />
+                    <FaPenAlt className="cursor-pointer hover:text-[#333]" />
+                  </div>
                 </div>
               );
             })}
+            <div className="mb-10"></div>
           </div>
         </div>
       </div>

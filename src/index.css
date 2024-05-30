@@ -22,6 +22,9 @@
 .bder-users{
   border: 1px solid #e5e5e5;
 }
+.bder-search{
+  border: 1px solid #ededee;
+}
 .bder-users-1{
   border-top: 1px solid #ededee;
   border-bottom: 1px solid #ededee;

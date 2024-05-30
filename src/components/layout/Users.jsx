@@ -153,15 +153,15 @@ function Users() {
         <div className="flex flex-col justify-center items-center mt-10  w-[90vw] lg:w-[72vw] mx-auto">
           <div className="flex justify-center gap-8 sm:gap-0 sm:justify-between items-center  w-[100%]">
             <div className="flex items-center justify-between gap-2 sm:flex-row flex-col leading-[8px] sm:leading-none">
-              <div className="flex items-center text-white bg-[#1c2e57] gap-1 px-3 py-[10px] text-[14px] rounded-md cursor-pointer">
+              <div className="flex items-center text-white bg-[#1c2e57] gap-1 px-3 py-[10px] text-[14px] rounded-md cursor-pointer xl:text-[18px]">
                 <span>Actions</span>
                 <IoIosArrowDown />
               </div>
-              <div className="text-[12px] sm:text-[14px]">
+              <div className="text-[12px] sm:text-[14px] xl:text-[18px]">
                 {selectedCount} Row Selected
               </div>
             </div>
-            <div className="flex items-center bg-[#fefffe] bder-users-1 rounded-md px-2 py-2 gap-2 w-[60%] sm:w-[50%]  lg:w-[30%]">
+            <div className="flex items-center bg-[#fefffe] bder-search rounded-md px-2 py-2 xl:py-3 gap-2 w-[60%] sm:w-[50%] lg:w-[30%]">
               <div>
                 <CiSearch className="cursor-pointer text-[20px]" />
               </div>
@@ -173,7 +173,7 @@ function Users() {
             </div>
           </div>
           <div className=" w-[90vw] lg:w-[72vw] h-[100%] max-h-[70vh]  overflow-auto rounded-md  mt-5 sm:mt-3 bg-[#f8f9f9]">
-            <div className="my-grid">
+            <div className="my-grid xl:text-[17px] 2xl:text-[19px]">
               <div className="flex justify-center items-center select-none ">
                 {isAllChecked ? (
                   <ImCheckboxChecked
@@ -205,7 +205,7 @@ function Users() {
             </div>
             {users.map((user) => {
               return (
-                <div className="my-grid" key={user.id}>
+                <div className="my-grid xl:text-[17px] 2xl:text-[19px]" key={user.id}>
                   <div className="flex bder-users-1 justify-center items-center select-none py-3">
                     {user.checked ? (
                       <ImCheckboxChecked
@@ -234,7 +234,7 @@ function Users() {
                   <span className="select-none bder-users-1 py-3 hidden sm:flex items-center justify-center">
                     {user.numberOfCards}
                   </span>
-                  <div className="text-[#4a4b4a] text-[15px] flex items-center justify-center gap-2  my_p_user">
+                  <div className="text-[#4a4b4a] text-[15px] flex items-center justify-center gap-2  my_p_user xl:text-[17px] 2xl:text-[19px]">
                     <NavLink to={`/admin/users/${user.id}`}><FaEye className="cursor-pointer hover:text-[#333]" /></NavLink>
                     <MdDelete onClick={() => handleDelete(user.id)} className="cursor-pointer hover:text-[#333]" />
                     <FaPenAlt className="cursor-pointer hover:text-[#333]" />

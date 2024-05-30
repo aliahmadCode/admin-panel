@@ -116,11 +116,11 @@ function User() {
             />
           </div>
         </div>
-        <div className="mt-10 flex flex-col pl-5">
+        <div className="mt-10 flex flex-col pl-5  w-[90%] lg:w-[72vw]">
           <NavLink to={"/admin/users"}>
-            <div className="flex items-center text-[#49525a]  gap-[11px]">
-              <IoIosArrowBack className="text-[20px]" />
-              <span className="hover:underline text-[19px] font-[600]">
+            <div className="flex items-center text-[#49525a]  gap-[11px] ">
+              <IoIosArrowBack className="text-[20px] xl:text-[21px] 2xl:text-[24px]" />
+              <span className="hover:underline text-[19px] font-[600] xl:text-[21px] 2xl:text-[24px] ">
                 {user.username}
               </span>
             </div>
@@ -135,20 +135,20 @@ function User() {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <div className="flex text-[18px] sm:text-[20px]">
-                  <span className="w-[180px] font-[600] text-[#282929]">
+                <div className="flex text-[18px] sm:text-[20px] xl:text-[21px] 2xl:text-[24px]">
+                  <span className="w-[180px] xl:w-[200px] font-[600] text-[#282929]">
                     Name:{" "}
                   </span>
                   <span className="text-[#7e7e7f]">{user.username}</span>
                 </div>
-                <div className="flex text-[18px] sm:text-[20px]">
-                  <span className="w-[180px] font-[600] text-[#282929]">
+                <div className="flex text-[18px] sm:text-[20px] xl:text-[21px] 2xl:text-[24px]">
+                  <span className="w-[180px] xl:w-[200px] font-[600] text-[#282929] ">
                     Email:{" "}
                   </span>
                   <span className="text-[#7e7e7f]">{user.email}</span>
                 </div>
-                <div className="flex text-[18px] sm:text-[20px]">
-                  <span className="w-[180px] font-[600] text-[#282929]">
+                <div className="flex text-[18px] sm:text-[20px] xl:text-[21px] 2xl:text-[24px]">
+                  <span className="w-[180px] xl:w-[200px] font-[600] text-[#282929]">
                     Phone Number:{" "}
                   </span>
                   <span className="text-[#7e7e7f]">{user.phone}</span>
@@ -156,34 +156,41 @@ function User() {
               </div>
             </div>
             <div className="flex flex-col w-[95%] sm:w-[50%] mt-3">
-              <h3 className="text-[20px] sm:text-[22px] font-[600] text-[#282929]">
+              <h3 className="text-[20px] sm:text-[22px] xl:text-[24px] 2xl:text-[28px] font-[600] text-[#282929]">
                 About
               </h3>
-              <p className="text-[#7e7e7f] text-[17px] mt-1">{user.about}</p>
+              <p className="text-[#7e7e7f] text-[17px] xl:text-[19px] 2xl:text-[21px] mt-1">{user.about}</p>
             </div>
             <div className="flex flex-col gap-2 w-[95%] sm:w-[50%] mt-3">
-              <h3 className="text-[20px] sm:text-[22px] font-[600] text-[#282929]">
+              <h3 className="text-[20px] sm:text-[22px] xl:text-[24px] 2xl:text-[28px] font-[600] text-[#282929]">
                 Social Links
               </h3>
               <div className="flex gap-3">
                 <div className="px-[12px] py-[12px] border-[#1d2f57] border-[1px] border-solid rounded-full cursor-pointer">
-                  <FaFacebook className="text-[#0e89e3] text-[18px]" />
+                  <FaFacebook className="text-[#0e89e3] text-[18px] xl:text-[19px] 2xl:text-[21px]" />
                 </div>
                 <div className="px-[12px] py-[12px] border-[#1d2f57] border-[1px] border-solid rounded-full cursor-pointer">
-                  <BiLogoGmail className="text-[#eb4334] text-[18px]" />
+                  <BiLogoGmail className="text-[#eb4334] text-[18px] xl:text-[19px] 2xl:text-[21px]" />
                 </div>
                 <div className="px-[12px] py-[12px] border-[#1d2f57] border-[1px] border-solid rounded-full cursor-pointer">
-                  <FaTwitter className="text-[#118ae2] text-[18px]" />
+                  <FaTwitter className="text-[#118ae2] text-[18px] xl:text-[19px] 2xl:text-[21px]" />
                 </div>
                 <div className="px-[12px] py-[12px] border-[#1d2f57] border-[1px] border-solid rounded-full cursor-pointer">
-                  <FaLinkedin className="text-[#017fbb] text-[18px]" />
+                  <FaLinkedin className="text-[#017fbb] text-[18px] xl:text-[19px] 2xl:text-[21px]" />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-[95%] sm:w-[50%] mt-3">
-              <h3 className="text-[20px] sm:text-[22px] font-[600] text-[#282929]">
-                About
+            <div className="flex flex-col  mt-3">
+              <h3 className="text-[20px] sm:text-[22px] xl:text-[24px] 2xl:text-[28px] font-[600] text-[#282929]">
+                Cards
               </h3>
+              <div className="flex items-center sm:justify-start justify-center gap-2 flex-wrap">
+                <img src="/card1.svg" alt="card" className="w-[205px] xl:w-[215px]" />
+                <img src="/card2.svg" alt="card" className="w-[190px] xl:w-[205px]"/>
+                <img src="/card1.svg" alt="card" className="w-[205px] xl:w-[215px]"/>
+                <img src="/card2.svg" alt="card" className="w-[190px] xl:w-[205px]"/>
+              </div>
+                <div className="mb-5"></div>
             </div>
           </div>
         </div>

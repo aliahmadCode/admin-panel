@@ -6,21 +6,21 @@ import { FaStar } from "react-icons/fa";
 
 const users = [
   {
-    img: "users.webp",
+    img: "user.svg",
     id: 1,
     user: "Harry Kane",
     email: "kane@example.com",
     joined: "30 minutes ago",
   },
   {
-    img: "users.webp",
+    img: "user.svg",
     id: 2,
     user: "Harper Nelson",
     email: "nelson@example.com",
     joined: "1 hour ago",
   },
   {
-    img: "users.webp",
+    img: "user.svg",
     id: 3,
     user: "Calvin Mank",
     email: "mank@example.com",
@@ -76,7 +76,7 @@ function Dashboard() {
             />
           </div>
         </div>
-        <div className="flex flex-wrap sm:flex-row flex-col md:justify-start justify-center items-center mt-12 gap-3 px-7">
+        <div className="flex flex-wrap sm:flex-row flex-col md:justify-start justify-center items-center mt-12 gap-3 px-10">
           <div className="w-[100%] sm:w-[320px] xl:w-[340px] xl:h-[160px] 2xl:w-[360px] 2xl:h-[170px] h-[150px] flex justify-between box-shadow-1 bg-white rounded-xl">
             <div className="flex flex-col text-[#49525a] justify-between py-4 px-4">
               <div className="flex flex-col">
@@ -125,13 +125,13 @@ function Dashboard() {
                         alt="user"
                         className="w-8 h-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12"
                       />
-                      <span className="text-[14px] xl:text-[18px] 2xl:text-[20px]   sm:text-[16px] leading-[12px] sm:leading-none ">{user.user}</span>
+                      <span className="text-[14px] xl:text-[18px] 2xl:text-[20px]  font-[600] sm:text-[16px] leading-[14px] sm:leading-none ">{user.user}</span>
                     </div>
                     <div className="flex items-center w-[70%] sm:w-[70%]  gap-2">
                       <div className="w-[60%] sm:w-[40%] ">
-                        <span className="text-[14px] sm:text-[16px] xl:text-[18px] 2xl:text-[20px]">{user.email}</span>
+                        <span className="text-[14px] sm:text-[16px] font-[500] xl:text-[18px] 2xl:text-[20px]">{user.email}</span>
                       </div>
-                      <span className="text-[12px] sm:text-[16px] xl:text-[18px] 2xl:text-[20px] leading-[12px] sm:leading-none ml-[6px] sm:ml-0 ">Joined {user.joined}</span>
+                      <span className="text-[12px] sm:text-[16px] xl:text-[18px] 2xl:text-[20px] leading-[12px] sm:leading-none ml-[6px] sm:ml-0 font-[500]">Joined <span className="">{user.joined}</span></span>
                     </div>
                   </div>
                 );

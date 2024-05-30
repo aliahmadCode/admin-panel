@@ -76,9 +76,32 @@ const data = [
 ];
 
 function Users() {
-  const [selectedCount, setRowSelected] = useState(1);
+  const [selectedCount, setRowSelected] = useState(0);
   const [isAllChecked, setIsAllChecked] = useState(false);
   const [users, setUsers] = useState(data);
+
+  function handleIsAllChecked() {
+    if (isAllChecked) {
+        setIsAllChecked(prev => !prev)
+        setUsers(data)
+    }else{
+        setIsAllChecked(prev => !prev)
+        const arr = users.map(item =>{
+            return {...item, checked: true}
+        })
+        setUsers(arr)
+    }
+  }
+  function handleUserChecked(id) {
+    const arr = users.map(user => {
+        if (id === user.id && user.checked === false){
+            return {...user, checked: true}
+        }else{
+            return {...user, checked: false}
+        }
+    })
+    setUsers(arr)
+  }
   return (
     <>
       <div className="bg-[#fefffe] w-[100%] h-full  flex flex-col">
@@ -120,18 +143,18 @@ function Users() {
               />
             </div>
           </div>
-          <div className="w-[90vw] lg:w-[72vw] h-[100%] max-h-[70vh] bder overflow-auto rounded-md mb-5 mt-5 sm:mt-3 bg-[#f8f9f9]">
+          <div className=" w-[90vw] lg:w-[72vw] h-[100%] max-h-[70vh]  overflow-auto rounded-md mb-5 mt-5 sm:mt-3 bg-[#f8f9f9]">
             <div className="my-grid">
               <div className="flex justify-center items-center select-none ">
                 {isAllChecked ? (
                   <ImCheckboxChecked
                     className=""
-                    onClick={() => setIsAllChecked((prev) => !prev)}
+                    onClick={() => handleIsAllChecked()}
                   />
                 ) : (
                   <ImCheckboxUnchecked
                     className=""
-                    onClick={() => setIsAllChecked((prev) => !prev)}
+                    onClick={() => handleIsAllChecked()}
                   />
                 )}
               </div>
@@ -141,32 +164,33 @@ function Users() {
               <span className="select-none ">No of Cards</span>
               <span className="select-none r">Actions</span>
             </div>
-            <div className="my-grid">
-              {users.map((user) => {
-                return (
-                  <>
-                    <div className="flex justify-center items-center select-none ">
-                      {user.checked ? (
-                        <ImCheckboxChecked
-                          className=""
-                          onClick={() => setIsAllChecked((prev) => !prev)}
-                        />
-                      ) : (
-                        <ImCheckboxUnchecked
-                          className=""
-                          onClick={() => setIsAllChecked((prev) => !prev)}
-                        />
-                      )}
-                    </div>
+            {users.map((user) => {
+              return (
+                <div className="my-grid " key={user.id}>
+                  <div className="flex justify-center items-center select-none ">
+                    {user.checked ? (
+                      <ImCheckboxChecked
+                        className=""
+                        onClick={() => handleUserChecked(user.id)}
+                      />
+                    ) : (
+                      <ImCheckboxUnchecked
+                        className=""
+                        onClick={() => handleUserChecked(user.id)}
+                      />
+                    )}
+                  </div>
+                  <div className="flex">
+                    <img src="/user.svg" alt="user" />
                     <span className="select-none ">{user.username}</span>
-                    <span className="select-none ">{user.phone}</span>
-                    <span className="select-none ">{user.email}</span>
-                    <span className="select-none ">{user.numberOfCards}</span>
-                    <span className="select-none ">{user.username}</span>
-                  </>
-                );
-              })}
-            </div>
+                  </div>
+                  <span className="select-none ">{user.phone}</span>
+                  <span className="select-none ">{user.email}</span>
+                  <span className="select-none ">{user.numberOfCards}</span>
+                  <span className="select-none ">{user.username}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

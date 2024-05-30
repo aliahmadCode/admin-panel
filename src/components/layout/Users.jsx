@@ -8,7 +8,6 @@ import { CiSearch } from "react-icons/ci";
 import { ImCheckboxChecked } from "react-icons/im";
 import { ImCheckboxUnchecked } from "react-icons/im";
 
-
 const data = [
   {
     id: 1,
@@ -17,7 +16,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 2,
@@ -26,7 +26,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 3,
@@ -35,7 +36,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 4,
@@ -44,7 +46,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 5,
@@ -53,7 +56,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 6,
@@ -62,7 +66,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 7,
@@ -71,7 +76,8 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
   {
     id: 8,
@@ -80,10 +86,10 @@ const data = [
     phone: "+1 555-555-555",
     numberOfCards: "2",
     checked: false,
-    about: "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast."
+    about:
+      "Hi there! I'm Andi Lane, a California-based passionate software business owner, entrepreneur, and technology enthusiast.",
   },
 ];
-
 
 import { FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -100,7 +106,7 @@ function Users() {
     } else {
       setRowSelected(0);
     }
-    console.log(users)
+    console.log(users);
   }, [users]);
 
   function handleIsAllChecked() {
@@ -126,9 +132,9 @@ function Users() {
     });
     setUsers(arr);
   }
-  function handleDelete(id){
-    const arr = users.filter(item => item.id !== id)
-    setUsers(arr)
+  function handleDelete(id) {
+    const arr = users.filter((item) => item.id !== id);
+    setUsers(arr);
   }
 
   return (
@@ -205,7 +211,10 @@ function Users() {
             </div>
             {users.map((user) => {
               return (
-                <div className="my-grid xl:text-[17px] 2xl:text-[19px]" key={user.id}>
+                <div
+                  className="my-grid xl:text-[17px] 2xl:text-[19px]"
+                  key={user.id}
+                >
                   <div className="flex bder-users-1 justify-center items-center select-none py-3">
                     {user.checked ? (
                       <ImCheckboxChecked
@@ -219,12 +228,15 @@ function Users() {
                       />
                     )}
                   </div>
-                  <div className="flex bder-users-1 py-3 items-center gap-2 my_p_user">
-                    <img src="/user.svg" alt="user" className="w-8 h-8 " />
-                    <span className="select-none sm:leading-none leading-[17px] ">
-                      {user.username}
-                    </span>
-                  </div>
+                  <NavLink to={`/admin/users/${user.id}`}>
+                    <div className="flex bder-users-1 py-3 items-center gap-2 my_p_user">
+                      <img src="/user.svg" alt="user" className="w-8 h-8 " />
+                      <span className="select-none sm:leading-none leading-[17px] hover:underline">
+                        {user.username}
+                      </span>
+                    </div>
+                  </NavLink>
+
                   <span className="select-none bder-users-1 py-3 hidden sm:flex items-center justify-center">
                     {user.phone}
                   </span>
@@ -235,8 +247,13 @@ function Users() {
                     {user.numberOfCards}
                   </span>
                   <div className="text-[#4a4b4a] text-[15px] flex items-center justify-center gap-2  my_p_user xl:text-[17px] 2xl:text-[19px]">
-                    <NavLink to={`/admin/users/${user.id}`}><FaEye className="cursor-pointer hover:text-[#333]" /></NavLink>
-                    <MdDelete onClick={() => handleDelete(user.id)} className="cursor-pointer hover:text-[#333]" />
+                    <NavLink to={`/admin/users/${user.id}`}>
+                      <FaEye className="cursor-pointer hover:text-[#333]" />
+                    </NavLink>
+                    <MdDelete
+                      onClick={() => handleDelete(user.id)}
+                      className="cursor-pointer hover:text-[#333]"
+                    />
                     <FaPenAlt className="cursor-pointer hover:text-[#333]" />
                   </div>
                 </div>

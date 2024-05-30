@@ -159,7 +159,9 @@ function User() {
               <h3 className="text-[20px] sm:text-[22px] xl:text-[24px] 2xl:text-[28px] font-[600] text-[#282929]">
                 About
               </h3>
-              <p className="text-[#7e7e7f] text-[17px] xl:text-[19px] 2xl:text-[21px] mt-1">{user.about}</p>
+              <p className="text-[#7e7e7f] text-[17px] xl:text-[19px] 2xl:text-[21px] mt-1">
+                {user.about}
+              </p>
             </div>
             <div className="flex flex-col gap-2 w-[95%] sm:w-[50%] mt-3">
               <h3 className="text-[20px] sm:text-[22px] xl:text-[24px] 2xl:text-[28px] font-[600] text-[#282929]">
@@ -185,12 +187,28 @@ function User() {
                 Cards
               </h3>
               <div className="flex items-center sm:justify-start justify-center gap-2 flex-wrap">
-                <img src="/card1.svg" alt="card" className="w-[205px] xl:w-[215px]" />
-                <img src="/card2.svg" alt="card" className="w-[190px] xl:w-[205px]"/>
-                <img src="/card1.svg" alt="card" className="w-[205px] xl:w-[215px]"/>
-                <img src="/card2.svg" alt="card" className="w-[190px] xl:w-[205px]"/>
+                <img
+                  src="/card1.svg"
+                  alt="card"
+                  className="w-[215px] sm:w-[205px] xl:w-[215px]"
+                />
+                <img
+                  src="/card2.svg"
+                  alt="card"
+                  className="w-[205px] sm:w-[190px] xl:w-[205px]"
+                />
+                <img
+                  src="/card1.svg"
+                  alt="card"
+                  className="w-[215px] sm:w-[205px] xl:w-[215px]"
+                />
+                <img
+                  src="/card2.svg"
+                  alt="card"
+                  className="w-[205px] sm:w-[190px] xl:w-[205px]"
+                />
               </div>
-                <div className="mb-5"></div>
+              <div className="mb-5"></div>
             </div>
           </div>
         </div>

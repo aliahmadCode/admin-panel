@@ -183,7 +183,7 @@ function Users() {
               <div className="flex justify-center items-center select-none ">
                 {isAllChecked ? (
                   <ImCheckboxChecked
-                    className=""
+                    className="mx-2"
                     onClick={() => handleIsAllChecked()}
                   />
                 ) : (

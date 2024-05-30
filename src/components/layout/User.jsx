@@ -136,19 +136,19 @@ function User() {
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex text-[18px] sm:text-[20px] xl:text-[21px] 2xl:text-[24px]">
-                  <span className="w-[180px] xl:w-[200px] font-[600] text-[#282929]">
+                  <span className="w-[160px] sm:w-[180px] xl:w-[200px] font-[600] text-[#282929]">
                     Name:{" "}
                   </span>
                   <span className="text-[#7e7e7f]">{user.username}</span>
                 </div>
                 <div className="flex text-[18px] sm:text-[20px] xl:text-[21px] 2xl:text-[24px]">
-                  <span className="w-[180px] xl:w-[200px] font-[600] text-[#282929] ">
+                  <span className="w-[160px] sm:w-[180px] xl:w-[200px] font-[600] text-[#282929] ">
                     Email:{" "}
                   </span>
                   <span className="text-[#7e7e7f]">{user.email}</span>
                 </div>
                 <div className="flex text-[18px] sm:text-[20px] xl:text-[21px] 2xl:text-[24px]">
-                  <span className="w-[180px] xl:w-[200px] font-[600] text-[#282929]">
+                  <span className="w-[160px] sm:w-[180px] xl:w-[200px] font-[600] text-[#282929]">
                     Phone Number:{" "}
                   </span>
                   <span className="text-[#7e7e7f]">{user.phone}</span>
